@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://bp2gv0s7ga1li"]
+
+[ext_resource type="Texture2D" uid="uid://f0ufcmrqnuea" path="res://Backgrounds/Snowy_Background_-_Plain.png" id="1_jls0q"]
+[ext_resource type="Script" path="res://ask_who.gd" id="1_t7vtj"]
+[ext_resource type="Texture2D" uid="uid://cp3xkg6xwfefw" path="res://Characters/Percey.png" id="2_ilqjd"]
+[ext_resource type="Texture2D" uid="uid://danrlufwkn3eg" path="res://Characters/Alex_Neutral.png" id="2_j1rba"]
+[ext_resource type="Texture2D" uid="uid://cx8816hkfo0lx" path="res://Characters/Ash.png" id="3_ddvfg"]
+
+[node name="Ask Who" type="Node2D"]
+script = ExtResource("1_t7vtj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 2360.0
+offset_bottom = 1640.0
+texture = ExtResource("1_jls0q")
+
+[node name="Percy" type="Sprite2D" parent="TextureRect"]
+position = Vector2(944, 296)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_ilqjd")
+
+[node name="Ash" type="Sprite2D" parent="TextureRect"]
+position = Vector2(576, 288)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_ddvfg")
+
+[node name="Alex" type="Sprite2D" parent="TextureRect"]
+position = Vector2(192, 280)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_j1rba")
+
+[node name="TextBox" type="ColorRect" parent="TextureRect"]
+layout_mode = 0
+offset_top = 464.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.964706, 0.698039, 0.807843, 1)
+
+[node name="Dialogue" type="Label" parent="TextureRect/TextBox"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 48.0
+offset_right = 1112.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Now it is time for me to try and ask someone on a date! I have to be very careful with who I choose because I only have enough time for one date, and I want it to be perfect! Now, who will I go with?"
+autowrap_mode = 3
+
+[node name="NameBox" type="ColorRect" parent="TextureRect"]
+layout_mode = 0
+offset_top = 448.0
+offset_right = 232.0
+offset_bottom = 504.0
+color = Color(1, 0.517647, 0.372549, 1)
+
+[node name="Speaker\'s Name" type="Label" parent="TextureRect/NameBox"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 8.0
+offset_right = 216.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Frostee:"
+horizontal_alignment = 1
+
+[node name="ClickScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[connection signal="gui_input" from="ClickScreen" to="." method="_on_click_screen_gui_input"]

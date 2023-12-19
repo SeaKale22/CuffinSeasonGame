@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsjygptdw5rjn"]
+
+[ext_resource type="Texture2D" uid="uid://f0ufcmrqnuea" path="res://Backgrounds/Snowy_Background_-_Plain.png" id="1_pyhj1"]
+
+[node name="Who to Ask" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_pyhj1")

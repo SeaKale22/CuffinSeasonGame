@@ -1,27 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqgu6ylk4yed4"]
+[gd_scene load_steps=5 format=3 uid="uid://dtnmqjwll4ltx"]
 
-[ext_resource type="Texture2D" uid="uid://f0ufcmrqnuea" path="res://Backgrounds/Snowy_Background_-_Plain.png" id="1_84wb1"]
-[ext_resource type="Script" path="res://alex_interview.gd" id="1_d2unv"]
-[ext_resource type="Texture2D" uid="uid://bma2pet0xrcvg" path="res://Characters/MCNeutral.png" id="2_eiel7"]
-[ext_resource type="Texture2D" uid="uid://danrlufwkn3eg" path="res://Characters/Alex_Neutral.png" id="3_o8gs4"]
+[ext_resource type="Texture2D" uid="uid://f0ufcmrqnuea" path="res://Backgrounds/Snowy_Background_-_Plain.png" id="1_ogkl5"]
+[ext_resource type="Script" path="res://alex_date.gd" id="1_u4cxx"]
+[ext_resource type="Texture2D" uid="uid://bma2pet0xrcvg" path="res://Characters/MCNeutral.png" id="2_dyikb"]
+[ext_resource type="Texture2D" uid="uid://danrlufwkn3eg" path="res://Characters/Alex_Neutral.png" id="3_ej450"]
 
-[node name="Alex Interview" type="Node2D"]
-script = ExtResource("1_d2unv")
+[node name="Alex Date" type="Node2D"]
+script = ExtResource("1_u4cxx")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 2360.0
 offset_bottom = 1640.0
-texture = ExtResource("1_84wb1")
+texture = ExtResource("1_ogkl5")
 
 [node name="McNeutral" type="Sprite2D" parent="TextureRect"]
 position = Vector2(248, 312)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_eiel7")
+texture = ExtResource("2_dyikb")
 
 [node name="AlexNeutral" type="Sprite2D" parent="TextureRect"]
 position = Vector2(904, 352)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_o8gs4")
+texture = ExtResource("3_ej450")
 
 [node name="TextBox" type="ColorRect" parent="TextureRect"]
 layout_mode = 0

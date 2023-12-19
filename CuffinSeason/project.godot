@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 PlayerAttributes="*res://PlayerAttributes.gd"
 AshAttributes="*res://AshAttributes.gd"
+AlexAttributes="*res://AlexAttributes.gd"
+PercyAttributes="*res://PercyAttributes.gd"
 
 [rendering]
 
