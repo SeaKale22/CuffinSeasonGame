@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ca85wx6vdlu5i"]
+[gd_scene load_steps=9 format=3 uid="uid://ca85wx6vdlu5i"]
 
 [ext_resource type="Script" path="res://intro_master.gd" id="1_6whgc"]
 [ext_resource type="Texture2D" uid="uid://cosljsif1mlot" path="res://images/Backgrounds-Textures/Snow_Landscape.png" id="1_bt7av"]
 [ext_resource type="Script" path="res://Scroll Scene.gd" id="2_qxgod"]
 [ext_resource type="PackedScene" uid="uid://ca7sivwn4lgtx" path="res://MCPlayer.tscn" id="4_hfmou"]
 [ext_resource type="PackedScene" uid="uid://bler3pya11jj4" path="res://newspaper_ground.tscn" id="5_gaojt"]
+[ext_resource type="Texture2D" uid="uid://beblgykpxa6oq" path="res://images/Backgrounds-Textures/UseKeys.png" id="6_45vs0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_na1w2"]
 size = Vector2(2120, 159)
@@ -51,3 +52,7 @@ shape = SubResource("RectangleShape2D_bhqjk")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Scroll Scene/Walls"]
 position = Vector2(2024, 704)
 shape = SubResource("RectangleShape2D_bhqjk")
+
+[node name="UseKeys" type="Sprite2D" parent="."]
+position = Vector2(216, 128)
+texture = ExtResource("6_45vs0")

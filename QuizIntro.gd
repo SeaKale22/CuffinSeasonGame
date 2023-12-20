@@ -5,6 +5,7 @@ var count = 0
 func _ready():
 	$"ColorRect2/Speaker".text = 'Frostee:'
 	$"ColorRect2/Dialogue".text = 'A HEAT WAVE?!?!'
+	$Click.visible = !$Click.visible
 
 func _on_control_gui_input(event):
 	if event is InputEventMouseButton:

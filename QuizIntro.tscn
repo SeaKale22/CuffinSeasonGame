@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6e0iaqxf4xof"]
+[gd_scene load_steps=5 format=3 uid="uid://c6e0iaqxf4xof"]
 
 [ext_resource type="Texture2D" uid="uid://cosljsif1mlot" path="res://images/Backgrounds-Textures/Snow_Landscape.png" id="1_fx041"]
 [ext_resource type="Script" path="res://QuizIntro.gd" id="1_t4y80"]
 [ext_resource type="Texture2D" uid="uid://8u4ccmd27ig" path="res://images/MC/MC_Concerned.png" id="2_5xn4l"]
+[ext_resource type="Texture2D" uid="uid://clsynvgibicj5" path="res://images/Backgrounds-Textures/Click.png" id="4_0lk42"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_t4y80")
@@ -51,5 +52,10 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 2048.0
 offset_bottom = 1432.0
+
+[node name="Click" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1784, 320)
+texture = ExtResource("4_0lk42")
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
