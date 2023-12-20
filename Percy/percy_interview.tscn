@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://yq7gc11fyrxd"]
+
+[ext_resource type="Script" path="res://Percy/percy_interview.gd" id="1_1l70m"]
+[ext_resource type="Texture2D" uid="uid://f0ufcmrqnuea" path="res://Backgrounds/Snowy_Background_-_Plain.png" id="2_ylsp6"]
+[ext_resource type="Texture2D" uid="uid://bma2pet0xrcvg" path="res://Characters/MCNeutral.png" id="3_yaqqj"]
+[ext_resource type="Texture2D" uid="uid://1uq26826xepa" path="res://Percy/Percy.png" id="4_wrm2b"]
+
+[node name="Percy Interview" type="Node2D"]
+scale = Vector2(1.8, 1.8)
+script = ExtResource("1_1l70m")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 2360.0
+offset_bottom = 1640.0
+texture = ExtResource("2_ylsp6")
+
+[node name="McNeutral" type="Sprite2D" parent="TextureRect"]
+position = Vector2(248, 312)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_yaqqj")
+
+[node name="Percy" type="Sprite2D" parent="TextureRect"]
+position = Vector2(904, 352)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_wrm2b")
+
+[node name="TextBox" type="ColorRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = -8.88889
+offset_top = 595.556
+offset_right = 1143.11
+offset_bottom = 779.556
+color = Color(0.964706, 0.698039, 0.807843, 1)
+
+[node name="Dialogue" type="Label" parent="TextureRect/TextBox"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 48.0
+offset_right = 1112.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Placeholder Text"
+autowrap_mode = 3
+
+[node name="NameBox" type="ColorRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 8.88889
+offset_top = 568.889
+offset_right = 240.889
+offset_bottom = 624.889
+color = Color(1, 0.517647, 0.372549, 1)
+
+[node name="Speaker\'s Name" type="Label" parent="TextureRect/NameBox"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 8.0
+offset_right = 216.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Place Holder:"
+horizontal_alignment = 1
+
+[node name="ClickScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1156.0
+offset_bottom = 782.0
+
+[connection signal="gui_input" from="ClickScreen" to="." method="_on_click_screen_gui_input"]

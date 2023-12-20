@@ -16,7 +16,7 @@ func _on_click_screen_gui_input(event):
 	if count == 2:
 		$TextureRect/TextBox/Dialogue.text = 'Mmm...'
 	if count == 3:
-		$TextureRect/TextBox/Dialogue.text = 'It just doesn\'nt feel like winter without snow, so I\'d hope it would be snowy outside!'
+		$TextureRect/TextBox/Dialogue.text = 'It just doesn\'t feel like winter without snow, so I\'d hope it would be snowy outside!'
 	if count == 4:
 		$TextureRect/TextBox/Dialogue.text = 'A nice baked good like a cobbler or a pie would be a wonderful treat to have.'
 	if count == 5:
@@ -27,6 +27,6 @@ func _on_click_screen_gui_input(event):
 		$TextureRect/TextBox/Dialogue.text = 'All of this daydreaming was nice, but I gotta go finish my errands. It was nice meeting you!'
 	if count == 8:
 		$"TextureRect/NameBox/Speaker's Name".text = 'Frostee:'
-		$TextureRect/TextBox/Dialogue.text = 'Thank\'s for answering my question. Laters!'
+		$TextureRect/TextBox/Dialogue.text = 'Thanks for answering my question. Laters!'
 	if count == 9:
 		get_tree().change_scene_to_file('res://ask_who.tscn')
