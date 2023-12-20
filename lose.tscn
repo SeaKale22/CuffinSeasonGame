@@ -1,0 +1,108 @@
+[gd_scene load_steps=18 format=3 uid="uid://dowthh6sql4u6"]
+
+[ext_resource type="Script" path="res://lose.gd" id="1_x7iia"]
+[ext_resource type="Texture2D" uid="uid://brsl3n15leiyk" path="res://images/IceHeartLoad/Ice_Heart_Load-1.png" id="2_465rj"]
+[ext_resource type="Texture2D" uid="uid://dl0i6qnlm4u1m" path="res://images/IceHeartLoad/Ice_Heart_Load-2.png" id="3_bt6x6"]
+[ext_resource type="Texture2D" uid="uid://c8w1mxtnkgx0q" path="res://images/IceHeartLoad/Ice_Heart_Load-3.png" id="4_hd7p7"]
+[ext_resource type="Texture2D" uid="uid://eq5ayt0ygggh" path="res://images/IceHeartLoad/Ice_Heart_Load-4.png" id="5_ovubk"]
+[ext_resource type="Texture2D" uid="uid://d2hhcyv8k5hjg" path="res://images/IceHeartLoad/Ice_Heart_Load-5.png" id="6_r60gy"]
+[ext_resource type="Texture2D" uid="uid://bug7uyck7ry8h" path="res://images/IceHeartMelt/IceHeart.PNG" id="7_38485"]
+[ext_resource type="Texture2D" uid="uid://c35stuj3rmn6x" path="res://images/IceHeartMelt/IceHeartMelt1.PNG" id="8_r40ci"]
+[ext_resource type="Texture2D" uid="uid://cptmyaniyhdtj" path="res://images/IceHeartMelt/IceHeartMelt2.PNG" id="9_uuvsr"]
+[ext_resource type="Texture2D" uid="uid://babyvmjryj5rn" path="res://images/IceHeartMelt/IceHeartMelt3.PNG" id="10_nd1pr"]
+[ext_resource type="Texture2D" uid="uid://fdfteyvcroud" path="res://images/IceHeartMelt/IceHeartMelt4.PNG" id="11_krxl8"]
+[ext_resource type="Texture2D" uid="uid://bfsh1q1kpowl8" path="res://images/IceHeartMelt/IceHeartMelt5.PNG" id="12_l5mvj"]
+[ext_resource type="Texture2D" uid="uid://ctixim4kfq3ug" path="res://images/IceHeartMelt/IceHeartMelt6.PNG" id="13_nkud0"]
+
+[sub_resource type="Animation" id="Animation_d4coe"]
+resource_name = "Load"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nmlwm"]
+_data = {
+"Load": SubResource("Animation_d4coe")
+}
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_34rtq"]
+frames = 5
+speed_scale = 2.3
+frame_0/texture = ExtResource("2_465rj")
+frame_1/texture = ExtResource("3_bt6x6")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("4_hd7p7")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("5_ovubk")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("6_r60gy")
+frame_4/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_dsokm"]
+frames = 7
+speed_scale = 2.3
+frame_0/texture = ExtResource("7_38485")
+frame_0/duration = 1.64
+frame_1/texture = ExtResource("8_r40ci")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("9_uuvsr")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("10_nd1pr")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("11_krxl8")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("12_l5mvj")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("13_nkud0")
+frame_6/duration = 1.0
+
+[node name="Lose" type="Node2D"]
+script = ExtResource("1_x7iia")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(2048, 1419)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nmlwm")
+}
+
+[node name="Label" type="Label" parent="."]
+offset_left = 824.0
+offset_top = 512.0
+offset_right = 1224.0
+offset_bottom = 797.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 96.0
+offset_top = -664.0
+offset_right = 2576.0
+offset_bottom = 2844.0
+grow_horizontal = 2
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AnimatedTexture_34rtq")
+stretch_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -448.0
+offset_top = -1072.0
+offset_right = 2032.0
+offset_bottom = 2436.0
+grow_horizontal = 2
+scale = Vector2(1.1, 1.1)
+texture = SubResource("AnimatedTexture_dsokm")
+stretch_mode = 3
+metadata/_edit_use_anchors_ = true

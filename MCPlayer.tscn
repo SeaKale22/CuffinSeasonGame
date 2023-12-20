@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca7sivwn4lgtx"]
+
+[ext_resource type="Texture2D" uid="uid://b33jw1auvn1cj" path="res://images/MC/MCNeutral.png" id="1_tybj5"]
+[ext_resource type="Script" path="res://MCPlayer.gd" id="2_evr58"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ktpiw"]
+radius = 160.0
+height = 464.0
+
+[node name="MCPlayer" type="CharacterBody2D"]
+script = ExtResource("2_evr58")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ktpiw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_tybj5")
+metadata/_edit_group_ = true

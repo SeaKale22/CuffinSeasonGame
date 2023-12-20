@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgec1uh4mxt0b"]
+
+[ext_resource type="Script" path="res://Quiz/quiz1.gd" id="1_sj5o7"]
+[ext_resource type="Texture2D" uid="uid://f0ufcmrqnuea" path="res://Backgrounds/Snowy_Background_-_Plain.png" id="2_snvk2"]
+[ext_resource type="Texture2D" uid="uid://ckctebhevfkvs" path="res://Icons/Weather/Sunny.png" id="3_ygqhe"]
+[ext_resource type="Texture2D" uid="uid://dumqr68fvsuhg" path="res://Icons/Weather/Snowy.png" id="4_861qh"]
+[ext_resource type="Texture2D" uid="uid://bhkkcr6gkeh7i" path="res://Icons/Weather/Stormy.png" id="5_tmnt7"]
+
+[node name="Quiz1" type="Node2D"]
+scale = Vector2(1.8, 1.8)
+script = ExtResource("1_sj5o7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_snvk2")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 1024.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = "What's the best weather for the day?"
+horizontal_alignment = 1
+
+[node name="AnswerSunny" type="Button" parent="TextureRect/Label"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 120.0
+offset_right = 768.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 40
+text = "Sunny"
+icon_alignment = 1
+
+[node name="AnswerSnowy" type="Button" parent="TextureRect/Label"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 272.0
+offset_right = 768.0
+offset_bottom = 344.0
+theme_override_font_sizes/font_size = 40
+text = "Snowy"
+
+[node name="AnswerStormy" type="Button" parent="TextureRect/Label"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 416.0
+offset_right = 768.0
+offset_bottom = 488.0
+theme_override_font_sizes/font_size = 40
+text = "Stormy"
+
+[node name="Sunny" type="Sprite2D" parent="."]
+position = Vector2(968, 216)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_ygqhe")
+
+[node name="Sunny2" type="Sprite2D" parent="."]
+position = Vector2(176, 216)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_ygqhe")
+
+[node name="Snowy" type="Sprite2D" parent="."]
+position = Vector2(992, 400)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_861qh")
+
+[node name="Snowy2" type="Sprite2D" parent="."]
+position = Vector2(144, 400)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_861qh")
+
+[node name="Stormy" type="Sprite2D" parent="."]
+position = Vector2(144, 536)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_tmnt7")
+
+[node name="Stormy2" type="Sprite2D" parent="."]
+position = Vector2(1000, 544)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_tmnt7")
+
+[connection signal="pressed" from="TextureRect/Label/AnswerSunny" to="." method="_on_answer_sunny_pressed"]
+[connection signal="pressed" from="TextureRect/Label/AnswerSnowy" to="." method="_on_answer_snowy_pressed"]
+[connection signal="pressed" from="TextureRect/Label/AnswerStormy" to="." method="_on_answer_stormy_pressed"]

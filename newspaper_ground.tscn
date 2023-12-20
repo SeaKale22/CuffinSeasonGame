@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://bler3pya11jj4"]
+
+[ext_resource type="Texture2D" uid="uid://dte8gypo25v37" path="res://images/Backgrounds-Textures/NewsGround.png" id="2_l6gh5"]
+
+[sub_resource type="GDScript" id="GDScript_wn2bv"]
+script/source = "extends Area2D
+signal paper
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+
+
+func _on_touch_paper_body_entered(body):
+		if body.name == \"MCPlayer\":
+			print(\"no touchy!\")
+			get_tree().change_scene_to_file(\"res://news_paper_zoom.tscn\")
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7xma1"]
+radius = 192.167
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gb4mu"]
+radius = 216.0
+
+[node name="NewspaperGround" type="Area2D"]
+script = SubResource("GDScript_wn2bv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_7xma1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_l6gh5")
+
+[node name="Touch Paper" type="Area2D" parent="."]
+
+[node name="hitbox" type="CollisionShape2D" parent="Touch Paper"]
+shape = SubResource("CircleShape2D_gb4mu")
+
+[connection signal="body_entered" from="Touch Paper" to="." method="_on_touch_paper_body_entered"]

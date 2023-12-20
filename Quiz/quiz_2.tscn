@@ -1,0 +1,131 @@
+[gd_scene load_steps=8 format=3 uid="uid://cirdta3h67ky8"]
+
+[ext_resource type="Script" path="res://Quiz/quiz_2.gd" id="1_ds466"]
+[ext_resource type="Texture2D" uid="uid://f0ufcmrqnuea" path="res://Backgrounds/Snowy_Background_-_Plain.png" id="2_acn14"]
+[ext_resource type="Texture2D" uid="uid://yc36mkeyvpj6" path="res://Icons/Apperal/Beanie.png" id="3_j0g7d"]
+[ext_resource type="Texture2D" uid="uid://bb7lqbd85xmdx" path="res://Icons/Apperal/Ear_Muffs.png" id="4_pfe4i"]
+[ext_resource type="Texture2D" uid="uid://co8jsh10q46dr" path="res://Icons/Apperal/Mittens.png" id="5_cwwyf"]
+[ext_resource type="Texture2D" uid="uid://ds3idon8olk4i" path="res://Icons/Apperal/Scarf.png" id="6_j7m8d"]
+[ext_resource type="Texture2D" uid="uid://br5lnkrckpmx5" path="res://Icons/Apperal/Puffy_Jacket.png" id="7_puck6"]
+
+[node name="Quiz2" type="Node2D"]
+scale = Vector2(1.8, 1.8)
+script = ExtResource("1_ds466")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 2360.0
+offset_bottom = 1640.0
+texture = ExtResource("2_acn14")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 1024.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = "What are you wearing to keep warm?"
+horizontal_alignment = 1
+
+[node name="AnswerBeanie" type="Button" parent="TextureRect/Label"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 72.0
+offset_right = 760.0
+offset_bottom = 144.0
+scale = Vector2(0.998519, 1)
+theme_override_font_sizes/font_size = 40
+text = "Beanie"
+
+[node name="AnswerMittens" type="Button" parent="TextureRect/Label"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 264.0
+offset_right = 760.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 40
+text = "Mittens"
+
+[node name="AnswerScarf" type="Button" parent="TextureRect/Label"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 360.0
+offset_right = 760.0
+offset_bottom = 432.0
+theme_override_font_sizes/font_size = 40
+text = "Scarf"
+
+[node name="AnswerPuffyJacket" type="Button" parent="TextureRect/Label"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 464.0
+offset_right = 760.0
+offset_bottom = 536.0
+theme_override_font_sizes/font_size = 40
+text = "PuffyJacket"
+
+[node name="AnswerEarMuffs" type="Button" parent="TextureRect/Label"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 168.0
+offset_right = 760.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 40
+text = " Ear Muffs"
+
+[node name="Beanie" type="Sprite2D" parent="."]
+position = Vector2(176, 176)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("3_j0g7d")
+
+[node name="Beanie2" type="Sprite2D" parent="."]
+position = Vector2(976, 168)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("3_j0g7d")
+
+[node name="EarMuffs" type="Sprite2D" parent="."]
+position = Vector2(168, 288)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("4_pfe4i")
+
+[node name="EarMuffs2" type="Sprite2D" parent="."]
+position = Vector2(960, 280)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("4_pfe4i")
+
+[node name="Mittens" type="Sprite2D" parent="."]
+position = Vector2(192, 384)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("5_cwwyf")
+
+[node name="Mittens2" type="Sprite2D" parent="."]
+position = Vector2(968, 376)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("5_cwwyf")
+
+[node name="Scarf" type="Sprite2D" parent="."]
+position = Vector2(184, 472)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("6_j7m8d")
+
+[node name="Scarf2" type="Sprite2D" parent="."]
+position = Vector2(952, 464)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("6_j7m8d")
+
+[node name="PuffyJacket" type="Sprite2D" parent="."]
+position = Vector2(184, 568)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("7_puck6")
+
+[node name="PuffyJacket2" type="Sprite2D" parent="."]
+position = Vector2(952, 560)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("7_puck6")
+
+[connection signal="pressed" from="TextureRect/Label/AnswerBeanie" to="." method="_on_answer_beanie_pressed"]
+[connection signal="pressed" from="TextureRect/Label/AnswerMittens" to="." method="_on_answer_mittens_pressed"]
+[connection signal="pressed" from="TextureRect/Label/AnswerScarf" to="." method="_on_answer_scarf_pressed"]
+[connection signal="pressed" from="TextureRect/Label/AnswerPuffyJacket" to="." method="_on_answer_puffy_jacket_pressed"]
+[connection signal="pressed" from="TextureRect/Label/AnswerEarMuffs" to="." method="_on_answer_ear_muffs_pressed"]

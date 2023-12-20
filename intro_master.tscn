@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://ca85wx6vdlu5i"]
+
+[ext_resource type="Script" path="res://intro_master.gd" id="1_6whgc"]
+[ext_resource type="Texture2D" uid="uid://cosljsif1mlot" path="res://images/Backgrounds-Textures/Snow_Landscape.png" id="1_bt7av"]
+[ext_resource type="Script" path="res://Scroll Scene.gd" id="2_qxgod"]
+[ext_resource type="PackedScene" uid="uid://ca7sivwn4lgtx" path="res://MCPlayer.tscn" id="4_hfmou"]
+[ext_resource type="PackedScene" uid="uid://bler3pya11jj4" path="res://newspaper_ground.tscn" id="5_gaojt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_na1w2"]
+size = Vector2(2120, 159)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhqjk"]
+size = Vector2(89, 1418)
+
+[node name="IntroMaster" type="Node"]
+script = ExtResource("1_6whgc")
+
+[node name="Scroll Scene" type="Node2D" parent="."]
+script = ExtResource("2_qxgod")
+
+[node name="ColorRect" type="ColorRect" parent="Scroll Scene"]
+offset_right = 2048.0
+offset_bottom = 1416.0
+color = Color(0, 0, 0, 1)
+
+[node name="SnowLandscape" type="Sprite2D" parent="Scroll Scene"]
+position = Vector2(1022, 708)
+scale = Vector2(0.869492, 0.863415)
+texture = ExtResource("1_bt7av")
+
+[node name="MCPlayer" parent="Scroll Scene" instance=ExtResource("4_hfmou")]
+position = Vector2(264, 1024)
+
+[node name="NewspaperGround" parent="Scroll Scene" instance=ExtResource("5_gaojt")]
+position = Vector2(1508, 1144)
+scale = Vector2(0.998044, 0.997517)
+
+[node name="Floor" type="Area2D" parent="Scroll Scene"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scroll Scene/Floor"]
+position = Vector2(1020, 1336.5)
+shape = SubResource("RectangleShape2D_na1w2")
+
+[node name="Walls" type="Area2D" parent="Scroll Scene"]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scroll Scene/Walls"]
+position = Vector2(44.5, 704)
+shape = SubResource("RectangleShape2D_bhqjk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Scroll Scene/Walls"]
+position = Vector2(2024, 704)
+shape = SubResource("RectangleShape2D_bhqjk")

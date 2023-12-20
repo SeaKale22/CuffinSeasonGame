@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxbhr77mtofbn"]
+
+[ext_resource type="Texture2D" uid="uid://danrlufwkn3eg" path="res://Characters/Alex_Neutral.png" id="1_bblhl"]
+
+[sub_resource type="GDScript" id="GDScript_kc37c"]
+script/source = "extends Area2D
+signal paper
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+#func 
+	#if body.name == \"MCPlayer\":
+		#print(\"no touchy!\")
+		#get_tree().change_scene_to_file(\"res://Alex/alex_interview.tscn\")
+
+
+func _on_touch_paper_body_entered(body):
+	if body.name == \"MCPlayer\":
+		print(\"no touchy!\")
+		get_tree().change_scene_to_file(\"res://Alex/alex_interview.tscn\")
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7xma1"]
+radius = 192.167
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gb4mu"]
+radius = 216.0
+
+[node name="Alex" type="Area2D"]
+script = SubResource("GDScript_kc37c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_7xma1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7.62939e-06, -3.05176e-05)
+scale = Vector2(0.132258, 0.132258)
+texture = ExtResource("1_bblhl")
+
+[node name="Touch Paper" type="Area2D" parent="."]
+
+[node name="hitbox" type="CollisionShape2D" parent="Touch Paper"]
+shape = SubResource("CircleShape2D_gb4mu")
+
+[connection signal="body_entered" from="Touch Paper" to="." method="_on_touch_paper_body_entered"]

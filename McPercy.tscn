@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://cnmsyy4d7nard"]
+
+[ext_resource type="Texture2D" uid="uid://cosljsif1mlot" path="res://images/Backgrounds-Textures/Snow_Landscape.png" id="1_fufcm"]
+[ext_resource type="PackedScene" uid="uid://ca7sivwn4lgtx" path="res://MCPlayer.tscn" id="2_hqi0u"]
+[ext_resource type="PackedScene" uid="uid://byfbg7tl38kyp" path="res://Percy/PercyIcon.tscn" id="3_lm2ms"]
+
+[sub_resource type="GDScript" id="GDScript_itbdw"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdc6k"]
+size = Vector2(2120, 159)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rick3"]
+size = Vector2(89, 1418)
+
+[node name="McPercy" type="Node"]
+
+[node name="Scroll Scene2" type="Node2D" parent="."]
+script = SubResource("GDScript_itbdw")
+
+[node name="ColorRect" type="ColorRect" parent="Scroll Scene2"]
+offset_right = 2048.0
+offset_bottom = 1416.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="SnowLandscape" type="Sprite2D" parent="Scroll Scene2"]
+position = Vector2(1022, 708)
+scale = Vector2(0.869492, 0.863415)
+texture = ExtResource("1_fufcm")
+
+[node name="MCPlayer" parent="Scroll Scene2" instance=ExtResource("2_hqi0u")]
+position = Vector2(264, 1024)
+
+[node name="Percy" parent="Scroll Scene2" instance=ExtResource("3_lm2ms")]
+position = Vector2(1592, 1040)
+
+[node name="Floor" type="Area2D" parent="Scroll Scene2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scroll Scene2/Floor"]
+position = Vector2(1020, 1336.5)
+shape = SubResource("RectangleShape2D_xdc6k")
+
+[node name="Walls" type="Area2D" parent="Scroll Scene2"]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scroll Scene2/Walls"]
+position = Vector2(44.5, 704)
+shape = SubResource("RectangleShape2D_rick3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Scroll Scene2/Walls"]
+position = Vector2(2024, 704)
+shape = SubResource("RectangleShape2D_rick3")

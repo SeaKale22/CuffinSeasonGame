@@ -1,0 +1,100 @@
+[gd_scene load_steps=16 format=3 uid="uid://bjbkkdt0awq02"]
+
+[ext_resource type="Script" path="res://win.gd" id="1_u8oni"]
+[ext_resource type="Texture2D" uid="uid://brsl3n15leiyk" path="res://images/IceHeartLoad/Ice_Heart_Load-1.png" id="2_3wy4s"]
+[ext_resource type="Texture2D" uid="uid://dl0i6qnlm4u1m" path="res://images/IceHeartLoad/Ice_Heart_Load-2.png" id="3_8cxch"]
+[ext_resource type="Texture2D" uid="uid://c8w1mxtnkgx0q" path="res://images/IceHeartLoad/Ice_Heart_Load-3.png" id="4_fckhm"]
+[ext_resource type="Texture2D" uid="uid://eq5ayt0ygggh" path="res://images/IceHeartLoad/Ice_Heart_Load-4.png" id="5_5rcm1"]
+[ext_resource type="Texture2D" uid="uid://d2hhcyv8k5hjg" path="res://images/IceHeartLoad/Ice_Heart_Load-5.png" id="6_6sqb7"]
+[ext_resource type="Texture2D" uid="uid://bug7uyck7ry8h" path="res://images/IceHeartMelt/IceHeart.PNG" id="7_1yoep"]
+[ext_resource type="Texture2D" uid="uid://c35stuj3rmn6x" path="res://images/IceHeartMelt/IceHeartMelt1.PNG" id="8_2a56i"]
+[ext_resource type="Texture2D" uid="uid://cptmyaniyhdtj" path="res://images/IceHeartMelt/IceHeartMelt2.PNG" id="9_mklim"]
+[ext_resource type="Texture2D" uid="uid://babyvmjryj5rn" path="res://images/IceHeartMelt/IceHeartMelt3.PNG" id="10_25guu"]
+[ext_resource type="Texture2D" uid="uid://fdfteyvcroud" path="res://images/IceHeartMelt/IceHeartMelt4.PNG" id="11_lau36"]
+[ext_resource type="Texture2D" uid="uid://bfsh1q1kpowl8" path="res://images/IceHeartMelt/IceHeartMelt5.PNG" id="12_gr0rj"]
+[ext_resource type="Texture2D" uid="uid://ctixim4kfq3ug" path="res://images/IceHeartMelt/IceHeartMelt6.PNG" id="13_85rru"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_34rtq"]
+frames = 5
+speed_scale = 2.3
+frame_0/texture = ExtResource("2_3wy4s")
+frame_1/texture = ExtResource("3_8cxch")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("4_fckhm")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("5_5rcm1")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("6_6sqb7")
+frame_4/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_dsokm"]
+frames = 7
+speed_scale = 2.3
+frame_0/texture = ExtResource("7_1yoep")
+frame_0/duration = 1.64
+frame_1/texture = ExtResource("8_2a56i")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("9_mklim")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("10_25guu")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("11_lau36")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("12_gr0rj")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("13_85rru")
+frame_6/duration = 1.0
+
+[node name="Win" type="Node2D"]
+script = ExtResource("1_u8oni")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(2048, 1419)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 624.0
+offset_top = 472.0
+offset_right = 1420.0
+offset_bottom = 757.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+text = "frostee melted.
+
+because his heart was too warm.
+
+YOU WIN!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 96.0
+offset_top = -664.0
+offset_right = 2576.0
+offset_bottom = 2844.0
+grow_horizontal = 2
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AnimatedTexture_34rtq")
+stretch_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -448.0
+offset_top = -1072.0
+offset_right = 2032.0
+offset_bottom = 2436.0
+grow_horizontal = 2
+scale = Vector2(1.1, 1.1)
+texture = SubResource("AnimatedTexture_dsokm")
+stretch_mode = 3
+metadata/_edit_use_anchors_ = true

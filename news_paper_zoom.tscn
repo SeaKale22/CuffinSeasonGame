@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://bienc7id7ngit"]
+
+[ext_resource type="Script" path="res://news_paper_zoom.gd" id="1_ffj4o"]
+[ext_resource type="Texture2D" uid="uid://cph67sam607us" path="res://images/Backgrounds-Textures/Snowy_Background_-_Plain.png" id="2_ry12s"]
+[ext_resource type="Texture2D" uid="uid://drb7egtq8lk51" path="res://images/Backgrounds-Textures/FrontPage.png" id="3_e11sa"]
+[ext_resource type="Texture2D" uid="uid://bqkfud6ptx340" path="res://images/Ok-No/OK.png" id="4_i0scw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x1dav"]
+texture = ExtResource("4_i0scw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kt4ky"]
+texture = ExtResource("4_i0scw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h1u5n"]
+texture = ExtResource("4_i0scw")
+
+[node name="NewsPaperZoom" type="Node"]
+script = ExtResource("1_ffj4o")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 2048.0
+offset_bottom = 1416.0
+
+[node name="SnowyBackground-Plain" type="Sprite2D" parent="ColorRect"]
+position = Vector2(920, 784)
+texture = ExtResource("2_ry12s")
+
+[node name="FrontPage" type="Sprite2D" parent="ColorRect"]
+position = Vector2(712, 712)
+scale = Vector2(1.414, 1.414)
+texture = ExtResource("3_e11sa")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1592.0
+offset_top = 976.0
+offset_right = 2152.0
+offset_bottom = 1536.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_x1dav")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kt4ky")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_h1u5n")
+expand_icon = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
