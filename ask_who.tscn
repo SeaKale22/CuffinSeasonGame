@@ -45,7 +45,7 @@ offset_right = 1112.0
 offset_bottom = 168.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "Now it is time for me to try and ask someone on a date! I have to be very careful with who I choose because I only have enough time for one date, and I want it to be perfect! Now, who will I go with?"
+text = "WOW I've met so many cool people! But now I have to decide who to spend the day with..."
 autowrap_mode = 3
 
 [node name="NameBox" type="ColorRect" parent="TextureRect"]
