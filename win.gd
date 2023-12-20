@@ -20,5 +20,5 @@ func _process(delta):
 	if counter == 400:
 		$TextureRect2.visible = !$TextureRect2.visible
 	
-	if counter == 410:
+	if counter == 405:
 		$Label.visible = !$Label.visible
